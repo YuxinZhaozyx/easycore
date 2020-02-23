@@ -1,2 +1,3 @@
 # easycore
-A collection of tools to support research and development.
+
+easycore is a collection of tools to support research and development.

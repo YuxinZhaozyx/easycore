@@ -1,0 +1,11 @@
+app:
+  server:
+    host: 127.0.0.1
+    port: 8080
+  client:
+    version: '0.1.0'
+    user_number_range: (0, 100)
+    default_user: ['root', 'admin']
+
+docs:
+  path: https://XXXXXX.com/docs
