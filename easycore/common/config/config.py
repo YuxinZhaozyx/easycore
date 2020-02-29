@@ -5,8 +5,7 @@ import io
 from ast import literal_eval
 
 class CfgNode(dict):
-    """ Config Node
-    """
+    """ Config Node """
 
     __FROZEN_KEY__ = '__frozen__'
 
@@ -30,7 +29,8 @@ class CfgNode(dict):
 
     @classmethod
     def _create_config_from_dict(cls, in_dict):
-        """ Create a config tree from a possible nested dictionary.
+        """ 
+        Create a config tree from a possible nested dictionary.
 
         Note:
             this method will share variables with `in_dict` and modify `in_dict`. 
@@ -55,7 +55,8 @@ class CfgNode(dict):
 
     @classmethod
     def _check_name_valid(cls, name):
-        """ Check whether the name satisfies the named rule of python variable.
+        """ 
+        Check whether the name satisfies the named rule of python variable.
 
         Args:
             name (str):
@@ -68,7 +69,8 @@ class CfgNode(dict):
 
     @classmethod
     def _decode_value(cls, value):
-        """ Decode the value into CfgNode, str or other possible type.
+        """ 
+        Decode the value into CfgNode, str or other possible type.
 
         Args:
             value (Any):
@@ -87,7 +89,8 @@ class CfgNode(dict):
 
 
     def freeze(self, frozen:bool=True):
-        """ freeze or unfreeze the CfgNode and all of its children
+        """ 
+        freeze or unfreeze the CfgNode and all of its children
 
         Args:
             frozen (bool): freeze or unfreeze the config
@@ -99,9 +102,11 @@ class CfgNode(dict):
 
 
     def is_frozen(self):
-        """ get the state of the config.
+        """ 
+        get the state of the config.
         
-        Returns: whether the config tree is frozen.
+        Returns: 
+            bool: whether the config tree is frozen.
         """
         return self.__dict__[CfgNode.__FROZEN_KEY__]
 
@@ -125,7 +130,8 @@ class CfgNode(dict):
     
 
     def copy(self):
-        """ deepcopy this CfgNode
+        """ 
+        deepcopy this CfgNode
         
         Returns:
             CfgNode:
@@ -134,7 +140,8 @@ class CfgNode(dict):
 
 
     def merge(self, cfg):
-        """ merge another CfgNode into this CfgNode, the another CfgNode will override this CfgNode.
+        """ 
+        merge another CfgNode into this CfgNode, the another CfgNode will override this CfgNode.
 
         Args:
             cfg (CfgNode):
@@ -148,7 +155,8 @@ class CfgNode(dict):
 
 
     def save(self, save_path, encoding='utf-8'):
-        """ save the CfgNode into a yaml file
+        """ 
+        save the CfgNode into a yaml file
 
         Args:
             save_path:
@@ -159,7 +167,8 @@ class CfgNode(dict):
 
     @classmethod
     def _load_cfg_from_yaml_str(cls, yaml_str):
-        """ load a CfgNode from a string of yaml format
+        """ 
+        load a CfgNode from a string of yaml format
 
         Args:
             yaml_str (str): a string of yaml format
@@ -173,7 +182,8 @@ class CfgNode(dict):
 
     @classmethod
     def _load_cfg_from_yaml_file(cls, yaml_file):
-        """ load a CfgNode from a yaml file object
+        """ 
+        load a CfgNode from a yaml file object
 
         Args:
             yaml_file (io.IOBase):
@@ -186,7 +196,8 @@ class CfgNode(dict):
 
     @classmethod
     def open(cls, file, encoding='utf-8'):
-        """ load a CfgNode from file.
+        """ 
+        load a CfgNode from file.
 
         Args:
             file (io.IOBase or str): file object or path to the yaml file.
@@ -206,7 +217,8 @@ class CfgNode(dict):
 
     @classmethod
     def load(cls, yaml_str:str):
-        """ load a CfgNode from a string of yaml format
+        """
+        load a CfgNode from a string of yaml format
 
         Args:
             yaml_str (str): 
@@ -219,7 +231,8 @@ class CfgNode(dict):
 
     @classmethod
     def _convert_cfg_to_dict(cls, cfg):
-        """ convert a CfgNode to pure dict
+        """
+        convert a CfgNode to pure dict
 
         Args:
             cfg (CfgNode):
@@ -238,10 +251,11 @@ class CfgNode(dict):
 
     @classmethod
     def dump(cls, cfg, stream=None, encoding=None, **kwargs):
-        """ dump CfgNode into yaml str or yaml file
+        """
+        dump CfgNode into yaml str or yaml file
 
         Note:
-            if `stream` option is set to non-None object, the CfgNode will be dump into stream and return None, 
+            if `stream` option is set to non-None object, the CfgNode will be dumpped into stream and return None, 
             if `stream` option is not given or set to None, return a string instead.
 
         Args:
@@ -249,17 +263,13 @@ class CfgNode(dict):
             stream (io.IOBase or None): if set to a file object, the CfgNode will be dumpped into stream
                 and return None, if set to None, return a string instead.
             encoding (str or None):
-            kwargs: options of the yaml dumper. Some useful options are shown bellow.    
-                allow_unicode:
-                line_break:
-                explicit_start:
-                explicit_end:
-                version:
-                tags:
+            **kwargs: options of the yaml dumper. \n
+                Some useful options: ["allow_unicode", "line_break", "explicit_start", 
+                "explicit_end", "version", "tags"]. \n
                 See more details at https://github.com/yaml/pyyaml/blob/2f463cf5b0e98a52bc20e348d1e69761bf263b86/lib3/yaml/__init__.py#L252
 
         Returns:
-            None or str: 
+            None or str:
         """
         cfg_dict = CfgNode._convert_cfg_to_dict(cfg)
         return yaml.safe_dump(cfg_dict, stream=stream, encoding=encoding, **kwargs)
