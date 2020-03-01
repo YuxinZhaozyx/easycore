@@ -4,12 +4,23 @@
 
 + Python ≥ 3.6
 
-## Build easycore from Source
+## Install
+
+### Install from PyPI
+
+```shell
+pip install easycore
+```
+
+### Install from GitHub
 
 ```shell
 pip install 'git+https://github.com/YuxinZhaozyx/easycore.git'
+```
 
-# or build it from local
+### Install from a local clone
+
+```shell
 git clone https://github.com/YuxinZhaozyx/easycore.git
 cd easycore
 pip install -e .
