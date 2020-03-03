@@ -8,7 +8,7 @@ setup(
     packages = find_packages(),
     license = 'LICENSE',
     description = 'a collection of tools to support research and development.',
-    long_description = open('README.md').read(),
+    long_description = open('README.md', encoding='utf-8').read(),
     install_requires = [
         "pyyaml",
     ]
