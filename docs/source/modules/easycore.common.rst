@@ -5,6 +5,7 @@ easycore.common
 .. toctree::
 
    easycore.common.config
+   easycore.common.parallel
 
 
 

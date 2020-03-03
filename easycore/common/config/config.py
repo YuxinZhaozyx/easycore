@@ -124,6 +124,11 @@ class CfgNode(dict):
         
         self[name] = value
         
+    def __delattr__(self, name):
+        if name in self:
+            del self[name]
+        else:
+            raise AttributeError(name)
 
     def __repr__(self):
         return "{}({})".format(self.__class__.__name__, super(CfgNode, self).__repr__())

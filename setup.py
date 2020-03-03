@@ -2,11 +2,14 @@ from setuptools import setup, find_packages
 
 setup(
     name = 'easycore',
-    version = '0.1.0',
+    version = '0.2.0',
     author = 'Yuxin Zhao',
     url = 'https://github.com/YuxinZhaozyx/easycore',
     packages = find_packages(),
+    license = 'LICENSE',
+    description = 'a collection of tools to support research and development.',
+    long_description = open('README.md').read(),
     install_requires = [
-        "pyyaml>=5.3",
+        "pyyaml",
     ]
 )
