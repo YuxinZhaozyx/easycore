@@ -1,5 +1,7 @@
 # easycore
 
+![GitHub release](https://img.shields.io/github/release/YuxinZhaozyx/easycore.svg) ![PyPI](https://img.shields.io/pypi/v/easycore.svg)
+
 easycore is a collection of tools to support research and development.
 
 

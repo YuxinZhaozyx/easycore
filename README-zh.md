@@ -1,5 +1,7 @@
 # easycore
 
+![GitHub release](https://img.shields.io/github/release/YuxinZhaozyx/easycore.svg) ![PyPI](https://img.shields.io/pypi/v/easycore.svg)
+
 easycore 是一个用于支持研究和开发的python工具库。
 
 
