@@ -3,6 +3,7 @@
 ## Requirements
 
 + Python ≥ 3.6
++ PyTorch (optional, for `easycore.torch` package)
 
 ## Install
 

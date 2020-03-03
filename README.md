@@ -11,7 +11,8 @@ easycore is a collection of tools to support research and development.
 ## Features and Todos
 
 - [x] light weight and flexible config tools
-- [ ] multiprocessing acceleration tools
+- [x] multiprocessing acceleration tools
+- [ ] register mechanism
 
 ## Install
 
