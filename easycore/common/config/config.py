@@ -214,10 +214,10 @@ class CfgNode(dict):
         if isinstance(file, str):
             with open(file, 'r', encoding=encoding) as f:
                 return cls._load_cfg_from_yaml_file(f)
-        elif isinstance(yaml_file_or_str, io.IOBase):
+        elif isinstance(file, io.IOBase):
             return cls._load_cfg_from_yaml_file(file)
         else:
-            raise TypeError("Expect a file object or str object, but got a {}".format(type(yaml_file_or_str)))
+            raise TypeError("Expect a file object or str object, but got a {}".format(type(file)))
 
 
     @classmethod
