@@ -1,4 +1,4 @@
-from typing import Dict, Optional
+from typing import Dict, Optional, List
 
 class Registry:
     """
@@ -106,3 +106,12 @@ class Registry:
                 )
             )
         return self._obj_map[name]
+
+    def get_registered_names(self) -> List[str]:
+        """
+        Get all registered names.
+
+        Returns:
+            list[str]: list of registered names.
+        """
+        return list(self._obj_map.keys())

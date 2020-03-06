@@ -33,3 +33,24 @@ def test_registry_call_4():
     MODEL_REGISTRY.register('build_mobilenet', build_mobilenetv2)
 
     assert MODEL_REGISTRY.get('build_mobilenet')() == 'Call in build_mobilenetv2'
+
+def test_registry_get_registered_names():
+    FUNC_REGISTRY = Registry('func')
+
+    @FUNC_REGISTRY.register()
+    def A():
+        pass
+
+    @FUNC_REGISTRY.register('B')
+    def B_impl():
+        pass
+
+    def C():
+        pass
+
+    FUNC_REGISTRY.register(obj=C)
+    FUNC_REGISTRY.register('D', C)
+
+    registered_names = FUNC_REGISTRY.get_registered_names()
+    assert set(registered_names) == set(['A', 'B', 'C', 'D'])
+    
