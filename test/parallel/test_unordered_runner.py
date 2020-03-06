@@ -1,8 +1,7 @@
 from easycore.common.config import CfgNode
-from easycore.common.parallel import OrderedRunner
-import time
+from easycore.common.parallel import UnorderedRunner
 
-class Runner(OrderedRunner):
+class Runner(UnorderedRunner):
 
     @staticmethod
     def producer_work(device, cfg, data):
@@ -10,29 +9,24 @@ class Runner(OrderedRunner):
 
     @staticmethod
     def consumer_init(cfg):
-        cfg.data_list = []
+        cfg.sum = 0
 
     @staticmethod
     def consumer_work(cfg, data):
-        cfg.data_list.append(data)
+        cfg.sum += data
 
     @staticmethod
     def consumer_end(cfg):
-        return cfg.data_list
+        return cfg.sum
 
 
-if __name__ == '__main__':
-
-    
-    runner = Runner(3)
+def test_runner():
+    runner = Runner(devices=3)
     
     data_list = list(range(100))
     
-    start_time = time.time()
     result = runner(data_list)
-    end_time = time.time()
     
-    print(result)
-    print(end_time - start_time, "s")
+    assert result == sum([data * data for data in data_list])
 
     runner.close()

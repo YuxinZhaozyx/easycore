@@ -6,4 +6,5 @@ Tutorials
    install
    config
    multiprocessing
+   registry
 

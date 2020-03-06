@@ -1,6 +1,5 @@
 from easycore.common.config import CfgNode
 from easycore.torch.parallel import OrderedRunner
-import time
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -55,18 +54,13 @@ class Runner(OrderedRunner):
         data = torch.cat(cfg.data_list, dim=0)
         return data
 
-if __name__ == '__main__':
-
-    
-    runner = Runner(devices=["cpu", "cpu", "cuda:0"])
+def test_runner():
+    runner = Runner(devices=["cpu", "cpu"])
     
     data_list = list(range(100))
     
-    start_time = time.time()
     result = runner(batch_generator(data_list, 10))
-    end_time = time.time()
     
-    print(result.shape)
-    print(end_time - start_time, "s")
-
+    assert tuple(result.shape) == (100, 3)
+    
     runner.close()

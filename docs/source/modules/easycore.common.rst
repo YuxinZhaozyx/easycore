@@ -6,6 +6,7 @@ easycore.common
 
    easycore.common.config
    easycore.common.parallel
+   easycore.common.registry
 
 
 
