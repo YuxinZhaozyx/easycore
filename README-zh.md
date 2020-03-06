@@ -1,6 +1,8 @@
 # easycore
 
-![GitHub release](https://img.shields.io/github/release/YuxinZhaozyx/easycore.svg) ![PyPI](https://img.shields.io/pypi/v/easycore.svg)
+![GitHub release](https://img.shields.io/github/release/YuxinZhaozyx/easycore.svg) ![PyPI](https://img.shields.io/pypi/v/easycore.svg) ![Actions
+Status](https://github.com/YuxinZhaozyx/easycore/workflows/Python%20package/badge.svg)
+
 
 easycore 是一个用于支持研究和开发的python工具库。
 
@@ -14,7 +16,7 @@ easycore 是一个用于支持研究和开发的python工具库。
 
 - [x] 轻量且灵活的配置控制工具
 - [x] 多进程加速工具
-- [ ] 注册机制
+- [x] 注册机制
 
 ## 安装
 

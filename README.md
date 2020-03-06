@@ -1,6 +1,8 @@
 # easycore
 
-![GitHub release](https://img.shields.io/github/release/YuxinZhaozyx/easycore.svg) ![PyPI](https://img.shields.io/pypi/v/easycore.svg)
+![GitHub release](https://img.shields.io/github/release/YuxinZhaozyx/easycore.svg) ![PyPI](https://img.shields.io/pypi/v/easycore.svg) ![Actions
+Status](https://github.com/YuxinZhaozyx/easycore/workflows/Python%20package/badge.svg)
+
 
 easycore is a collection of tools to support research and development.
 
@@ -14,7 +16,7 @@ easycore is a collection of tools to support research and development.
 
 - [x] light weight and flexible config tools
 - [x] multiprocessing acceleration tools
-- [ ] register mechanism
+- [x] register mechanism
 
 ## Install
 
