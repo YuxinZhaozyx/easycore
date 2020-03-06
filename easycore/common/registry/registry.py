@@ -107,7 +107,7 @@ class Registry:
             )
         return self._obj_map[name]
 
-    def get_registered_names(self) -> List[str]:
+    def registered_names(self) -> List[str]:
         """
         Get all registered names.
 
