@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = 'easycore',
-    version = '0.2.0',
+    version = '0.3.0',
     author = 'Yuxin Zhao',
     url = 'https://github.com/YuxinZhaozyx/easycore',
     packages = find_packages(),
