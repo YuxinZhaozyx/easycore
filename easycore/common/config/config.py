@@ -82,7 +82,7 @@ class CfgNode(dict):
             value = cls(init_dict=value, copy=False)
         elif isinstance(value, str):
             try:
-                literal_eval(value)
+                value = literal_eval(value)
             except(ValueError, SyntaxError):
                 pass
         return value
@@ -278,3 +278,19 @@ class CfgNode(dict):
         """
         cfg_dict = CfgNode._convert_cfg_to_dict(cfg)
         return yaml.safe_dump(cfg_dict, stream=stream, encoding=encoding, **kwargs)
+
+    def dict(self):
+        """
+        convert to a dict
+
+        Returns:
+            dict:
+        """
+        return CfgNode._convert_cfg_to_dict(self)
+
+    def __str__(self):
+        """
+        Returns:
+            str: a str of dict format
+        """
+        return str(self.dict())

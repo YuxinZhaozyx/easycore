@@ -64,4 +64,13 @@ class TestCfgNode:
         assert cfg_a.A == 1
         assert isinstance(cfg_a.B, CN)
         assert cfg_a.B.C == 3
+    
+    def test_to_dict(self):
+        cfg = CN()
+        cfg.A = 1
+        cfg.B = CN()
+        cfg.B.C = 3
+        cfg_dict = cfg.dict()
         
+        result = {'A': 1, 'B':{'C': 3}}
+        assert cfg_dict == result
