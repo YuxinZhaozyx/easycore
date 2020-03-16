@@ -1,0 +1,5 @@
+__BASE__: ./folder/example-B.yaml
+A: in example-A.yaml
+B:
+  D: in example-A.yaml
+C: in example-A.yaml

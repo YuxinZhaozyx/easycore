@@ -156,7 +156,13 @@ class CfgNode(dict):
 
         cfg = cfg.copy()
         for key, value in cfg.items():
-            self[key] = value
+            if key not in self:
+                self[key] = value
+            elif self[key] != value:
+                if isinstance(self[key], CfgNode) and isinstance(value, CfgNode):
+                    self[key].merge(value)
+                else:
+                    self[key] = value
 
 
     def save(self, save_path, encoding='utf-8'):
