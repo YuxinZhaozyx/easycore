@@ -46,7 +46,7 @@ class BaseRunner:
                      init_func,
                      work_func,
                      end_func):
-            super(BaseRunner._Consumer, self).__init__()
+            super(BaseRunner._Consumer, self).__init__(daemon=True)
             self.receive_func = receive_func
             self.input_queue = input_queue
             self.output_queue = output_queue
