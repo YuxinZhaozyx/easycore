@@ -88,6 +88,29 @@ class Registry:
             name = obj.__name__
         self._do_register(name, obj)
 
+    def unregister(self, name:str) -> None:
+        """
+        Remove registered object.
+
+        Args:
+            name (str): registered name
+        """
+        if name not in self._obj_map:
+            raise KeyError("An object named '{}' isn't registered in '{}' registry.".format(name, self._name))
+        else:
+            del self._obj_map[name]
+
+    def is_registered(self, name):
+        """
+        Get whether the given name has been registered.
+
+        Args:
+            name (str):
+
+        Returns:
+            bool: whether the name has been registered. 
+        """
+        return name in self._obj_map
 
     def get(self, name:str) -> object:
         """
