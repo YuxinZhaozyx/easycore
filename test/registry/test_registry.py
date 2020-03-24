@@ -53,4 +53,17 @@ def test_registry_registered_names():
 
     registered_names = FUNC_REGISTRY.registered_names()
     assert set(registered_names) == set(['A', 'B', 'C', 'D'])
-    
+
+def test_unregister():
+    REGISTRY = Registry("test")
+
+    assert REGISTRY.is_registered('obj') == False
+
+    REGISTRY.register('obj', ["hello world"])
+
+    assert REGISTRY.is_registered('obj') == True
+
+    REGISTRY.unregister('obj')
+
+    assert REGISTRY.is_registered('obj') == False
+
