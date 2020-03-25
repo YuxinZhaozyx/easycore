@@ -149,7 +149,7 @@ class PathManager(object):
         Returns:
             bool: True if the path is a file.
         """
-        return PathManger._get_path_handler(path).isfile(path)
+        return PathManager._get_path_handler(path).isfile(path)
 
     @staticmethod
     def isdir(path: str) -> bool:
