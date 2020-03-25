@@ -7,4 +7,4 @@ Tutorials
    config
    multiprocessing
    registry
-
+   path_manager
