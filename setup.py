@@ -13,5 +13,6 @@ setup(
     install_requires = [
         "pyyaml",
         "tqdm",
+        "portalocker>=1.6.0",
     ]
 )
