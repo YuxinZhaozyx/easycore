@@ -6,7 +6,7 @@ Status](https://github.com/YuxinZhaozyx/easycore/workflows/Python%20package/badg
 
 easycore is a collection of tools to support research and development.
 
-
+This project is inspired by [facebookresearch/fvcore](https://github.com/facebookresearch/fvcore). Some code in this project is modified from fvcore's code.
 
 [English](./README.md) | [中文](./README-zh.md)
 
@@ -17,6 +17,7 @@ easycore is a collection of tools to support research and development.
 - [x] light weight and flexible config tools
 - [x] multiprocessing acceleration tools
 - [x] register mechanism
+- [x] flexible path manage tools (support local path, remote URL, path redirecting)
 
 ## Install
 
