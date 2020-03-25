@@ -15,7 +15,7 @@ import os
 class PathHandler(object):
     """
     Base Path handler class for a URI. It routes I/O for a generic
-    URI which may look like "protocol://*".
+    URI which may look like "protocol://path/to/file".
     """
     def get_cache_dir(self, protocol: Optional[str] = None) -> str:
         """
@@ -24,7 +24,7 @@ class PathHandler(object):
         The <base-cache-dir> is
         
         1) $EASYCORE_CACHE, if set
-        2) otherwise ~/.torch/fvcore_cache
+        2) otherwise ~/.easycore/cache
         
         Args:
             protocol (str or None): protocol such as 'http', 'https'.

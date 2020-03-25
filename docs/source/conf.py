@@ -48,6 +48,7 @@ except ImportError:
 for m in [
     "yaml",
     "cv2",
+    "portalocker",
 ]:
     sys.modules[m] = mock.Mock(name=m)
 

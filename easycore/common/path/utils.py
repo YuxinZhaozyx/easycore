@@ -14,10 +14,12 @@ def file_lock(path: str):
             `path + ".lock"`.
 
     Examples:
-        filename = "/path/to/file"
-        with file_lock(filename):
-            if not os.path.isfile(filename):
-                do_create_file()
+        
+        >>> filename = "/path/to/file"
+        >>> with file_lock(filename):
+        >>>    if not os.path.isfile(filename):
+        >>>        do_create_file()
+
     """
     dirname = os.path.dirname(path)
     try:
@@ -26,9 +28,3 @@ def file_lock(path: str):
         pass
 
     return portalocker.Lock(path + '.lock', timeout=1800)
-
-
-
-
-    
-    

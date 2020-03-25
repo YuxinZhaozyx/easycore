@@ -12,8 +12,9 @@ class RedirectPathHandler(PathHandler):
     Redirect a new prefix to existed prefix.
 
     Example:
-        
-        PathManager.register_handler(RedirectPathHandler("easycore://", "http://xxx.com/download/"))
+        .. code-block:: python
+            
+            PathManager.register(RedirectPathHandler("easycore://", "http://xxx.com/download/"))
     """
     def __init__(self, new_prefix: str, old_prefix: str):
         self.new_prefix = new_prefix

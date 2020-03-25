@@ -97,7 +97,7 @@ class PathManager(object):
         Copy a resource form local path to destination path.
 
         Note:
-            This interface is for custom PathHandler, it is prefer to use `copy` instead.
+            This interface is for custom PathHandler, it is prefered to use `copy()` instead.
 
         Args:
             local_path (str): a local path.
