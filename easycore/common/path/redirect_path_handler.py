@@ -37,7 +37,7 @@ class RedirectPathHandler(PathHandler):
         Returns:
             str: path of old_prefix.
         """
-        return self.old_prefix + path.lstrip(self.new_prefix)
+        return path.replace(self.new_prefix, self.old_prefix, 1)
 
     def get_local_path(self, path: str) -> str:
         """
