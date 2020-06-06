@@ -187,7 +187,7 @@ class CfgNode(dict):
         Returns:
             CfgNode:
         """
-        cfg_dict = yaml.safe_load(yaml_str)
+        cfg_dict = yaml.load(yaml_str)
         return cls(cfg_dict)
 
 
@@ -283,7 +283,7 @@ class CfgNode(dict):
             None or str:
         """
         cfg_dict = CfgNode._convert_cfg_to_dict(cfg)
-        return yaml.safe_dump(cfg_dict, stream=stream, encoding=encoding, **kwargs)
+        return yaml.dump(cfg_dict, stream=stream, encoding=encoding, **kwargs)
 
     def dict(self):
         """
