@@ -187,7 +187,7 @@ class CfgNode(dict):
         Returns:
             CfgNode:
         """
-        cfg_dict = yaml.load(yaml_str, Loader=yaml.FullLoader)
+        cfg_dict = yaml.load(yaml_str, Loader=yaml.UnsafeLoader)
         return cls(cfg_dict)
 
 
