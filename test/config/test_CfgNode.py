@@ -74,3 +74,9 @@ class TestCfgNode:
         
         result = {'A': 1, 'B':{'C': 3}}
         assert cfg_dict == result
+
+    def test_python_specified_tag(self):
+        input_path = os.path.join(FILE_DIR, 'example.yaml')
+
+        cfg = CN.open(input_path)
+        assert cfg.app.scale == [2 ** 0, 2 ** (1 / 3), 2 ** (2 / 3)]
