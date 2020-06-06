@@ -79,4 +79,4 @@ class TestCfgNode:
         input_path = os.path.join(FILE_DIR, 'example.yaml')
 
         cfg = CN.open(input_path)
-        assert cfg.scale == [2 ** 0, 2 ** (1 / 3), 2 ** (2 / 3)]
+        assert cfg.app.scale == [2 ** 0, 2 ** (1 / 3), 2 ** (2 / 3)]
